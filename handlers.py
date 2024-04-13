@@ -27,8 +27,8 @@ async def command_test(message: Message) -> None:
     text = message.text
     text2 = text.replace("/gen", "").strip()
     await message.answer(f'Генерируем {text2}, пожалуйста, подождите.')
-    api = Text2ImageAPI('https://api-key.fusionbrain.ai/', 'B1BE9C6B24C0FCB8C022001D08D87A3F',
-                        '24B68C3129999B8F077ABD1E94B48B09')
+    api = Text2ImageAPI('https://api-key.fusionbrain.ai/', 'Ваш 1 токен',
+                        'ВАШ 2 токен')
     model_id = api.get_model()
     uuid = api.generate(text2, model_id)
     images = api.check_generation(uuid)
